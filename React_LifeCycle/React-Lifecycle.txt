@@ -1,0 +1,18 @@
+Mount -> Constuctor/Props (We must not make a constructor 
+            which is default me must make it with Props) 
+      -> State getDerivedStateFromProps(Props,State)
+      -> Render (This Component will render in the virtual getDerivedStateFromProps)
+      -> ComponentDidMount() - The components you've directed to create ComponentDidMount says its done and 
+                               reflected to the virtual ComponentDidMount
+
+
+Updating -> getDerivedStateFromProps -> ShouldComponentUpdate (If it will return true then the changes will  -> getSnapShotBeforeUpdate (In this a screenshot will be there of the last values and then it will be changed) -> componentDidUpdate
+                                       be made in the virtual DOM)
+
+UnMount -> ComponentWillUnMount
+
+Error Handling -> getDerivedStateFromError -> ComponentDidCatch
+
+
+-> In Functional Based Component there is no Lifecycle provied
+-> In Functional Based Component we have useState

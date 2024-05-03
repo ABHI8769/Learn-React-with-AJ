@@ -1,0 +1,183 @@
+/*
+Q. Why React ??
+->It makes it easy to create  complex Front-End Projects and Brings the Concept of "Virtual DOM"
+
+
+Q) What is the concept of Virtual DOM ?
+->Virtual DOM is a DOM (Tree like structure) which do not reconstruct or repaints the DOM when updates occurs , In the virtual DOM it traverses 
+  the whole DOM tree and (disconnect and reconnect) OR we can say (updates) the changes.
+  This is the functionality Virtual DOM Brings and this creates a page which do not reloads compared to the browser DOM updating methods
+  Where the DOM of browser make updates by repainting the whole DOM structure when changes are bieng made or the DOM us Updated (Reconcilization).
+
+Nowadays Fibre algorithm came into picture for the multiple updates in seconds , so to optimize this problem and upadting the most recent 
+update called into the the tree this Fibre algorithm is Introduced.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Fibre Algorithm++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+* Fibre Algorithm :- 
+->Key features of Fibre are the ability to pause , abort , or reuse the work and the ability to assign 
+->Basically this algorithm is the best optimized algo implemented in the the virtual dom concept , for eg if i push a change and then push a change again
+  and then push a change again now updating the changes 3 times the fibre algo pause wait for the latest  update and then pushes the latest update
+  which optimizes the time.
+->Specifically in by fibre we need to able the :-
+  1. Pause work and come back to it later.
+  2. Assign priority to diffrent type of works 
+  3. Resuse previously completed work
+  4. Abort work if no longer needed.
+
+*Reconcilization algo :- 
+-> The algorithm uses to diff one tree with other to determine which parts need to be changed. Bascially this is the algorithm which runs in the behind the
+   scene of Virtual DOM.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Q. FrameWork VS Library
+-> Framework Consiste of strict rules
+->Library Don't work with strict rules it is flexible
+
+Q. React is a Library or Framework ?
+-> React is a Library as it is flexible 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=> Topics to Learn :- 
+1. Core of React : 1. State OR UI Manupulation
+                   2. JSX (JavaScript XML) -> JSX stands for JavaScript XML. 
+                                              JSX allows us to write HTML in React. 
+                                              JSX makes it easier to write and add HTML in React.
+
+2. Component Reusability :- So React allows a commendible resusabilty of codes like resuing Header , Footers 
+                            Cards , Buttons and in this process itself you will further learn Props
+
+3. Props :- (Reusing of Component) Props in React refers to Properties in JS
+
+4. Hooks :- How to propogate changes (useState , useEffect)
+
+=> Rect Builds a Single Page Application (SPA) , which adds a functionality that page never reloads
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=> Additional Addons to React :- 
+1. Router :- React don't have Routers , by router we can build the manupulations for the "SPA" 
+             to use this we have install a package called "React-Router-DOM"
+2. State Managment :- So when we have plenty of states/variables we don't which variable is updating when it is getting updated
+                      So , here State Managment comes into the picture
+                      - Libraries of JS to state managment :- (These are not react libraries these are JS Libraries)
+                      -> Redux , Redux toolkit , zustand , context API (context API also gives you hooks to manage the states)
+
+3. BAAS :- (Backend-AS-A-Service) Which incules :- FireBase , AppWrite , SuperBase etc
+                                                   Examples :- Social Media clone , E-commerce 
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=>After React :- 
+-> React js is not a complete solution 
+   no SEO(search engine optimization(Bad Code , Readibility to browser is bad))
+   By default there is no routing  
+-> Now to solve this there are some frameworks built on the basis of React
+   Next.js , Gatsby , Remix
+   Next.js :- Now next.js allows to write the backend and frontend in one framework itself
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+          -----(Web Development) React-DOM
+         /
+React--- 
+         \
+          ----(Application Development) React-Native
+
+npm - Node Package Manager
+npx - Node Package Executor
+
+create-react-app - Utility 
+npm create vite@latest
+
+-> In Production level build is served to everyone
+
+Vite - It is a development server which is the mordern replacement to react dev server
+
+To create a react app we need to know the below commands
+-> npm install vite@latest
+->cd (Enter the Project)
+->npm i (For required npm packages)
+->npm run dev (To start the Development Server)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+==>Strcutural Explainiation of the React app
+->node_modules = It holds all the external packages and libraries on which our Project depends on
+->public = It contians the public assets like logo's and stuff
+->src :- 1. Assets :- It is similar to the public folder the diff is it do not contains link and it is bundled at the time of execution
+         2. JSX - JavaScript XML File
+         3. main.jsx - It is the main Component
+         4. App.jsx - It is the app component , Where it the root component 
+         5. index.css - It is the main css file for the  react app 
+->index.html :- This is first entry point for the browser this refers to the main.jsx file 
+->package.json :- It holds the meta-data of the project like the name, version, build , type etc...
+
++++++++++++++++++++++++++++++++++++++++++++++++Components+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Q. What is a Component in React ?
+-> A component is a small set of code that inculde JavaScript and HTML which is reusable 
+
+=>Things to keep in mind while crearing a component 
+1. Component's function's name's first letter must be capatilized 
+2. Now specially when working in enviorments like vite it is must to make a component file in the jsx format 
+Where only react don't put any restiction of this type.
+
+=> As we know we cant't throw multiple tags in any components under the return statment so we wrap it
+with one tag <div></div> now if we do it like putting a emptied tag <></> now this is named as a fragment in React
+which solves to create div type tag to wrap all the tags into one tag to handle the return segment of the code in a Component 
+
+
+=> Bundler =>  Every React uses a Bundler (for e.g babble , Vite is also a bundler). Now what is work of the bundler this bundler performs the
+               behind the scene magic (e.g imporving the syntax) Now the return when the react element is created it goes through a parsing which converts 
+               the return and functional statment of a element into the object type.........
+
++++++++++++++++++++++++++++++++++++++++++++++++++Hooks++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+=> Most Importantly UI Updation is controlled by React.
+
+=> What are Hooks ??
+-> Hooks are the methods that updates multiple value in one go used any where in the code this brings the concept of virtual DOM
+Or we can say only with that method the data will be updated on the UI Part
+
+
+1. useContext 
+2. useState :- It will return you thing in a array format of 2 indexes in that array a[0] holds/creates a variable the  a[1] holds
+	       a function.
+3. useReducer 
+4. useEffect 
+5. useInsertionEffect 
+6. useLayoutEffect 
+7. useCallback 
+8. useDebugValue 
+9. useTransition 
+10 useDefferedValue 
+11 useSyncExternalStorage 
+
+++++++++++++++++++++++++++++++++++++++++++++++++createRoot++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+=> Now , the creatRoot function present in the main.jsx in the main default structure of vite+react 	
+   This particular function plays a vital role in the execution of the React project
+   
+=> Now , this function creates a DOM (Tree like structure) like structure the moment it gets executed 
+
+=> Now , what is the need for this function to create a DOM structure. So basically it compares the main DOM and the DOM created by 
+   createRoot and then make changes in only that specific area where the updates occured in the original DOM 
+
+=> Now , let's compare the working of browser , In the browser it repaints the DOM OR we can say it recreates the DOM After the updates
+   which creates a refresg/reload on the page (The loading is the cause of repainting/recreation of the whole DOM structure.
+
+=> Now what happens in the virtual DOM it traverses the whole DOM tree and disconnect and reconnect OR we can say updates the changes.
+
++++++++++++++++++++++++++++++++++++++++++++++++++Props+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Q. What is props :- 
+-> These are the read only properties that are shared between Components 
+A Parent Component can send data to the child Component 
+<Component key=value/>
+
+-> Props is going to be a JavaScript Objects
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++React_Routers++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+*/
